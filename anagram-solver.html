@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anagram Solver - Find all possible anagrams from scrambled letters. Perfect for word games, puzzles, and creative writing.">
+    <meta name="keywords" content="anagram solver, anagram finder, word anagram, letter scramble, word games, puzzle solver">
+    <meta name="author" content="Word Unscrambler">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://word-unscrambler.github.io/anagram-solver.html">
+    <meta property="og:title" content="Anagram Solver - Find All Possible Anagrams">
+    <meta property="og:description" content="Enter letters to find all possible anagrams. Perfect for word games, puzzles, and creative writing.">
+    <meta property="og:image" content="https://word-unscrambler.github.io/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://word-unscrambler.github.io/anagram-solver.html">
+    <meta name="twitter:title" content="Anagram Solver - Find All Possible Anagrams">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' text-anchor='middle' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
+    <link rel="canonical" href="https://word-unscrambler.github.io/anagram-solver.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>Anagram Solver | Find All Possible Anagrams</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Anagram Solver",
+        "description": "Find all possible anagrams from scrambled letters. Perfect for word games, puzzles, and creative writing.",
+        "url": "https://word-unscrambler.github.io/anagram-solver.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Word Unscrambler",
+            "url": "https://word-unscrambler.github.io/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://word-unscrambler.github.io/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Anagram Solver",
+            "item": "https://word-unscrambler.github.io/anagram-solver.html"
+        }]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Anagram-specific styles */
+        .anagram-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .anagram-examples {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        
+        .example-btn {
+            padding: 8px 16px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .example-btn:hover {
+            background: var(--bg-tertiary);
+            transform: translate(-2px, -2px);
+            box-shadow: 2px 2px 0 var(--border-color);
+        }
+        
+        .example-word {
+            font-weight: 700;
+            color: var(--highlight);
+        }
+        
+        .anagram-filters {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-label {
+            display: block;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        
+        .filter-select {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 14px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-select:focus {
+            background: var(--bg-primary);
+            box-shadow: 4px 4px 0 var(--border-color);
+        }
+        
+        .anagram-info {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .info-box {
+            flex: 1;
+            min-width: 150px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .info-label {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        
+        .info-value {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .anagram-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 32px;
+        }
+        
+        .anagram-group {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            padding: 16px;
+        }
+        
+        .group-title {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .anagram-list {
+            list-style: none;
+        }
+        
+        .anagram-item {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 14px;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.2s ease;
+        }
+        
+        .anagram-item:last-child {
+            border-bottom: none;
+        }
+        
+        .anagram-item:hover {
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+        
+        .anagram-item.highlight {
+            color: var(--highlight);
+            font-weight: 700;
+        }
+        
+        .anagram-stats {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stat-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+        
+        .stat-text {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .stat-number {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .no-anagrams {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--text-muted);
+        }
+        
+        .no-anagrams-icon {
+            width: 64px;
+            height: 64px;
+            opacity: 0.5;
+            margin-bottom: 16px;
+        }
+        
+        .loading-anagrams {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 48px;
+            color: var(--text-secondary);
+        }
+        
+        .loading-anagrams.active {
+            display: flex;
+        }
+        
+        .anagram-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-light);
+            border-top-color: var(--text-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .advanced-options {
+            margin-top: 24px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+        }
+        
+        .advanced-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .advanced-content {
+            margin-top: 16px;
+            display: none;
+        }
+        
+        .advanced-content.active {
+            display: block;
+        }
+        
+        .pattern-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        
+        .pattern-input:focus {
+            box-shadow: 4px 4px 0 var(--border-color);
+        }
+        
+        .pattern-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        
+        .pattern-example {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--highlight);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="currentColor"/>
+                    <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
+                </svg>
+                <span class="logo-text">UNSCRAMBLER</span>
+            </a>
+            <nav class="nav">
+                <!-- Tools dropdown menu -->
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn">
+                        Tools
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="/">Word Unscrambler</a>
+                        <a href="/crossword-solver.html">Crossword Solver</a>
+                        <a href="/jumble-solver.html">Jumble Solver</a>
+                        <a href="/rhyming-dictionary.html">Rhyming Dictionary</a>
+                        <a href="/thesaurus.html">Thesaurus</a>
+                        <a href="/word-search-solver.html">Word Search Solver</a>
+                        <a href="/hangman.html">Hangman Game</a>
+                        <a href="/anagram-solver.html">Anagram Solver</a>
+                    </div>
+                </div>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <span class="mobile-nav-section">Tools</span>
+        <a href="/" class="mobile-nav-link">Word Unscrambler</a>
+        <a href="/crossword-solver.html" class="mobile-nav-link">Crossword Solver</a>
+        <a href="/jumble-solver.html" class="mobile-nav-link">Jumble Solver</a>
+        <a href="/rhyming-dictionary.html" class="mobile-nav-link">Rhyming Dictionary</a>
+        <a href="/thesaurus.html" class="mobile-nav-link">Thesaurus</a>
+        <a href="/word-search-solver.html" class="mobile-nav-link">Word Search Solver</a>
+        <a href="/hangman.html" class="mobile-nav-link">Hangman Game</a>
+        <a href="/anagram-solver.html" class="mobile-nav-link">Anagram Solver</a>
+        <span class="mobile-nav-section">Navigation</span>
+        <a href="#features" class="mobile-nav-link">Features</a>
+        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+    </nav>
+    
+    <main>
+        <section class="hero">
+            <div class="container anagram-container">
+                <div class="hero-badge">
+                    <span class="badge">ANAGRAM FINDER</span>
+                </div>
+                <h1 class="hero-title">Anagram<br><span class="highlight">Solver</span></h1>
+                <p class="hero-subtitle">Enter letters to find all possible anagrams. Discover hidden words and creative combinations.</p>
+                
+                <div class="anagram-examples">
+                    <button class="example-btn" data-letters="listen">Try: <span class="example-word">listen</span></button>
+                    <button class="example-btn" data-letters="triangle">Try: <span class="example-word">triangle</span></button>
+                    <button class="example-btn" data-letters="dictionary">Try: <span class="example-word">dictionary</span></button>
+                    <button class="example-btn" data-letters="conversation">Try: <span class="example-word">conversation</span></button>
+                    <button class="example-btn" data-letters="abcdefgh">Try: <span class="example-word">abcdefgh</span></button>
+                </div>
+                
+                <div class="tool-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="anagramInput" 
+                            class="scrambled-input" 
+                            placeholder="Enter letters (e.g., 'listen')..."
+                            maxlength="15"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button class="clear-btn" id="clearBtn" aria-label="Clear input">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <button class="unscramble-btn" id="solveBtn">
+                        <span>FIND ANAGRAMS</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div class="anagram-filters">
+                        <div class="filter-group">
+                            <label for="minLength" class="filter-label">Minimum length:</label>
+                            <select id="minLength" class="filter-select">
+                                <option value="2">2 letters</option>
+                                <option value="3">3 letters</option>
+                                <option value="4" selected>4 letters</option>
+                                <option value="5">5 letters</option>
+                                <option value="6">6 letters</option>
+                                <option value="7">7 letters</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="maxLength" class="filter-label">Maximum length:</label>
+                            <select id="maxLength" class="filter-select">
+                                <option value="3">3 letters</option>
+                                <option value="4">4 letters</option>
+                                <option value="5">5 letters</option>
+                                <option value="6">6 letters</option>
+                                <option value="7">7 letters</option>
+                                <option value="8">8 letters</option>
+                                <option value="9">9 letters</option>
+                                <option value="10">10 letters</option>
+                                <option value="15" selected>All letters</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="sortBy" class="filter-label">Sort by:</label>
+                            <select id="sortBy" class="filter-select">
+                                <option value="length">Word length</option>
+                                <option value="alphabetical">Alphabetical</option>
+                                <option value="common">Most common</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="advanced-options">
+                        <button class="advanced-toggle" id="advancedToggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 15l-6-6-6 6"/>
+                            </svg>
+                            Advanced Options
+                        </button>
+                        <div class="advanced-content" id="advancedContent">
+                            <div class="filter-group">
+                                <label for="patternInput" class="filter-label">Word pattern (use ? for unknown letters):</label>
+                                <input 
+                                    type="text" 
+                                    id="patternInput" 
+                                    class="pattern-input" 
+                                    placeholder="e.g., c?t or ??t??g"
+                                    maxlength="15"
+                                >
+                                <div class="pattern-hint">
+                                    Example: <span class="pattern-example">c?t</span> finds cat, cot, cut
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="loading-anagrams" id="loadingAnagrams">
+                    <div class="anagram-spinner"></div>
+                    <span>Finding anagrams...</span>
+                </div>
+                
+                <div class="anagram-info" id="anagramInfo">
+                    <div class="info-box">
+                        <div class="info-label">Input Letters</div>
+                        <div class="info-value" id="inputLetters">0</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">Anagrams Found</div>
+                        <div class="info-value" id="anagramsFound">0</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">Unique Letters</div>
+                        <div class="info-value" id="uniqueLetters">0</div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-label">Longest Word</div>
+                        <div class="info-value" id="longestWord">-</div>
+                    </div>
+                </div>
+                
+                <div class="anagram-stats" id="anagramStats"></div>
+                
+                <div class="anagram-results" id="anagramResults"></div>
+                
+                <div class="no-anagrams hidden" id="noAnagrams">
+                    <svg class="no-anagrams-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" x2="9" y1="9" y2="15"></line>
+                        <line x1="9" x2="15" y1="9" y2="15"></line>
+                    </svg>
+                    <p>No anagrams found. Try different letters or adjust filters.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3>Enter Letters</h3>
+                        <p>Type the letters you want to find anagrams for. You can enter any combination of up to 15 letters.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3>Set Filters</h3>
+                        <p>Adjust minimum/maximum word length, sort order, or use patterns for specific letter positions.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3>Find Anagrams</h3>
+                        <p>Get all possible anagrams grouped by length. Perfect for word games, puzzles, and creative writing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Anagram Solver Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M2 12h20"></path>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M5 5l14 14"></path>
+                            </svg>
+                        </div>
+                        <h3>Complete Anagrams</h3>
+                        <p>Find all possible anagrams using every letter exactly once. Perfect for finding the longest possible words.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v4"></path>
+                                <path d="m4.93 4.93 2.83 2.83"></path>
+                                <path d="M2 12h4"></path>
+                                <path d="m4.93 19.07 2.83-2.83"></path>
+                                <path d="M12 22v-4"></path>
+                                <path d="m19.07 19.07-2.83-2.83"></path>
+                                <path d="M22 12h-4"></path>
+                                <path d="m19.07 4.93-2.83 2.83"></path>
+                                <circle cx="12" cy="12" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Partial Anagrams</h3>
+                        <p>Discover shorter words that can be formed from your letters. Great for crossword puzzles and word games.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
+                                <path d="M10 10h.01"></path>
+                                <path d="M14 10h.01"></path>
+                                <path d="M10 14h4"></path>
+                            </svg>
+                        </div>
+                        <h3>Pattern Matching</h3>
+                        <p>Use question marks for unknown letters to find words matching specific patterns. Ideal for puzzle solving.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Widget -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">About</h4>
+                    <p class="widget-text">Word Unscrambler is a free, fast, and powerful tool to help you find all possible English words from scrambled letters. Perfect for word games, puzzles, and expanding your vocabulary.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Updated Pages Widget with tool links -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">Tools</h4>
+                    <ul class="widget-links">
+                        <li><a href="/">Word Unscrambler</a></li>
+                        <li><a href="/crossword-solver.html">Crossword Solver</a></li>
+                        <li><a href="/jumble-solver.html">Jumble Solver</a></li>
+                        <li><a href="/rhyming-dictionary.html">Rhyming Dictionary</a></li>
+                        <li><a href="/thesaurus.html">Thesaurus</a></li>
+                        <li><a href="/word-search-solver.html">Word Search Solver</a></li>
+                        <li><a href="/hangman.html">Hangman Game</a></li>
+                        <li><a href="/anagram-solver.html">Anagram Solver</a></li>
+                    </ul>
+                </div>
+
+                <!-- Added Pages Widget -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">Pages</h4>
+                    <ul class="widget-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe Widget -->
+                <div class="footer-widget">
+                    <h4 class="widget-title">Subscribe</h4>
+                    <p class="widget-text">Get updates on new features and word lists.</p>
+                    <form class="subscribe-form" id="subscribeForm">
+                        <input type="email" placeholder="Enter your email" class="subscribe-input" required>
+                        <button type="submit" class="subscribe-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="currentColor"/>
+                        <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
+                    </svg>
+                    <span>UNSCRAMBLER</span>
+                </div>
+                <p class="copyright">&copy; 2025 Word Unscrambler. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <script src="anagram-solver.js"></script>
+</body>
+</html>
