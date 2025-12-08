@@ -667,6 +667,37 @@
                 </div>
             </div>
         </section>
+
+        <section class="content-text" id="deep-dive">
+            <div class="container">
+                <h2 class="section-title">Hangman: A Deep Dive into the Classic Word Game</h2>
+                
+                <p>Hangman is one of the world's most enduring and popular word-guessing games, pitting the player's vocabulary and deduction skills against a hidden mystery word. Our digital implementation provides a sleek, challenging, and customizable experience that keeps the spirit of the original paper-and-pencil game alive. The objective is simple: guess the hidden word one letter at a time, but beware—every incorrect guess brings you one step closer to completing the ominous hangman figure.</p>
+                
+                <h3 class="section-subtitle">How to Play: Logic and Deduction</h3>
+                <p>When you start a new game, the system selects a random word from our extensive dictionary, based on your chosen difficulty level. The word is represented by a series of dashes, corresponding to the number of letters in the word. You, the player, must guess letters of the alphabet. If a guessed letter appears in the word, all instances of that letter are instantly revealed in their correct positions. If the guessed letter is not in the word, it counts as a mistake, and one part of the hangman drawing is added to the gallows.</p>
+                
+                <p>The core challenge of Hangman lies in strategic guessing. Savvy players often start with common English vowels (E, A, I, O) and high-frequency consonants (T, N, S, H) to quickly uncover large parts of the word. The game relies on your ability to use partial information (the revealed letters) and context (word length) to logically deduce the remaining letters, minimizing incorrect guesses. The number of allowed mistakes is typically limited to six or seven, corresponding to the number of parts needed to draw the full hangman figure, adding a thrilling sense of risk to every choice.</p>
+                
+                <h2 class="section-title">Game Customization and Difficulty Levels</h2>
+                <p>To ensure the game is engaging for players of all skill levels, our Hangman implementation features robust customization options. This allows you to tailor the challenge to your vocabulary and time constraints.</p>
+                
+                <h3 class="section-subtitle">Choosing Your Word List</h3>
+                <p>The most significant customization is the ability to select the word category. Players can choose from standard dictionaries (General English), or opt for themed lists such as Animals, Geography, Food, or Technology. This not only makes the game more fun but also allows players to practice vocabulary within a specific domain. The system ensures the word pool remains fresh and vast, guaranteeing a unique challenge every time you hit 'Start New Game.'</p>
+                
+                <h3 class="section-subtitle">Difficulty Adjustment</h3>
+                <p>Difficulty is primarily controlled by the length of the hidden word. Easy mode might select words that are only 4-6 letters long, offering fewer blanks to fill and increasing the chance of quick success. Hard mode, conversely, selects longer, more complex words (e.g., 9+ letters) that often contain less common letters and fewer instances of frequent letters, demanding deeper lexical knowledge and greater strategic thinking.</p>
+                
+                <h2 class="section-title">The Digital Interface: Designed for Focus</h2>
+                <p>Our digital Hangman game prioritizes user comfort and concentration, essential for extended word-solving sessions. The interface is meticulously designed for high readability and a clean, engaging aesthetic, ensuring that the player's focus remains entirely on the puzzle.</p>
+                
+                <h3 class="section-subtitle">Clarity and Readability</h3>
+                <p>The visual design employs a clean layout with high contrast between text and background. This is ideal for ensuring maximum clarity of all game elements, including the drawing of the gallows, the hidden word, the on-screen letter keyboard, and the list of previously guessed letters. All components are styled to maintain a sleek, high-tech aesthetic while guaranteeing that every piece of information is instantly recognizable and easy to process.</p>
+                
+                <h3 class="section-subtitle">Enhancing Immersion</h3>
+                <p>The streamlined interface creates an immersive environment, drawing the player's attention entirely to the puzzle elements. The consistent and high-quality presentation across the entire application ensures that players can concentrate fully on their strategy without visual distractions, delivering a consistently personalized and enjoyable word-guessing experience every time they play.</p>
+            </div>
+        </section>
         
         <section class="features" id="features">
             <div class="container">
