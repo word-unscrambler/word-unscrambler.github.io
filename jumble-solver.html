@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jumble Solver - Solve daily jumble puzzles instantly. Unscramble jumbled words and find all possible solutions.">
+    <meta name="keywords" content="jumble solver, daily jumble, word jumble, unscramble words, puzzle solver">
+    <meta name="author" content="Word Unscrambler">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://word-unscrambler.github.io/jumble-solver.html">
+    <meta property="og:title" content="Jumble Solver - Solve Daily Jumble Puzzles">
+    <meta property="og:description" content="Solve daily jumble puzzles instantly. Enter scrambled letters to find all possible words.">
+    <meta property="og:image" content="https://word-unscrambler.github.io/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://word-unscrambler.github.io/jumble-solver.html">
+    <meta name="twitter:title" content="Jumble Solver - Solve Daily Jumble Puzzles">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' text-anchor='middle' fill='%23fff'%3EJ%3C/text%3E%3C/svg%3E">
+    <link rel="canonical" href="https://word-unscrambler.github.io/jumble-solver.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>Jumble Solver | Solve Daily Jumble Puzzles</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Jumble Solver",
+        "description": "Solve daily jumble puzzles instantly. Unscramble jumbled words and find all possible solutions.",
+        "url": "https://word-unscrambler.github.io/jumble-solver.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Word Unscrambler",
+            "url": "https://word-unscrambler.github.io/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://word-unscrambler.github.io/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Jumble Solver",
+            "item": "https://word-unscrambler.github.io/jumble-solver.html"
+        }]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="currentColor"/>
+                    <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
+                </svg>
+                <span class="logo-text">UNSCRAMBLER</span>
+            </a>
+            <nav class="nav">
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn">
+                        Tools
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="/">Word Unscrambler</a>
+                        <a href="/crossword-solver.html">Crossword Solver</a>
+                        <a href="/jumble-solver.html">Jumble Solver</a>
+                        <a href="/rhyming-dictionary.html">Rhyming Dictionary</a>
+                        <a href="/thesaurus.html">Thesaurus</a>
+                        <a href="/word-search-solver.html">Word Search Solver</a>
+                    </div>
+                </div>
+                <a href="/#features" class="nav-link">Features</a>
+                <a href="/about.html" class="nav-link">About</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <span class="mobile-nav-section">Tools</span>
+        <a href="/" class="mobile-nav-link">Word Unscrambler</a>
+        <a href="/crossword-solver.html" class="mobile-nav-link">Crossword Solver</a>
+        <a href="/jumble-solver.html" class="mobile-nav-link">Jumble Solver</a>
+        <a href="/rhyming-dictionary.html" class="mobile-nav-link">Rhyming Dictionary</a>
+        <a href="/thesaurus.html" class="mobile-nav-link">Thesaurus</a>
+        <a href="/word-search-solver.html" class="mobile-nav-link">Word Search Solver</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    <span class="badge">DAILY PUZZLE</span>
+                </div>
+                <h1 class="hero-title">Jumble<br><span class="highlight">Solver</span></h1>
+                <p class="hero-subtitle">Stuck on a jumble puzzle? Enter the scrambled letters and find the answer instantly.</p>
+                
+                <div class="tool-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="jumbleInput" 
+                            class="scrambled-input" 
+                            placeholder="Enter jumbled letters..."
+                            maxlength="15"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button class="clear-btn" id="clearBtn" aria-label="Clear input">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <button class="unscramble-btn" id="solveBtn">
+                        <span>SOLVE JUMBLE</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <div class="filters">
+                        <div class="filter-group">
+                            <label for="exactLength">Exact word length:</label>
+                            <input type="number" id="exactLength" class="filter-input" placeholder="Leave empty for all" min="2" max="15">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>Solving jumble...</span>
+                </div>
+
+                <div class="results-container" id="resultsContainer">
+                    <div class="results-header">
+                        <h2 class="results-title">
+                            <span id="resultsCount">0</span> Solutions Found
+                        </h2>
+                        <div class="results-actions">
+                            <button class="copy-all-btn" id="copyAllBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                                </svg>
+                                Copy All
+                            </button>
+                        </div>
+                    </div>
+                    <div class="results-grid" id="resultsGrid"></div>
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path>
+                        <path d="m14 7 3 3"></path>
+                        <path d="M5 6v4"></path>
+                        <path d="M19 14v4"></path>
+                        <path d="M10 2v2"></path>
+                        <path d="M7 8H3"></path>
+                        <path d="M21 16h-4"></path>
+                        <path d="M11 3H9"></path>
+                    </svg>
+                    <p>Enter jumbled letters to find solutions</p>
+                    <p class="hint-text">Works great for Daily Jumble puzzles!</p>
+                </div>
+
+                <div class="no-results hidden" id="noResults">
+                    <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                        <line x1="8" x2="14" y1="11" y2="11"></line>
+                    </svg>
+                    <p>No solutions found. Check your letters!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How To Use</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3>Enter Jumble</h3>
+                        <p>Type the scrambled letters from your puzzle.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3>Set Length</h3>
+                        <p>Optionally specify exact word length for precision.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3>Get Solution</h3>
+                        <p>Find the answer highlighted as the longest word!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="widget-title">About</h4>
+                    <p class="widget-text">Word Unscrambler provides free word puzzle tools to help you solve crosswords, jumbles, and more.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Tools</h4>
+                    <ul class="widget-links">
+                        <li><a href="/">Word Unscrambler</a></li>
+                        <li><a href="/crossword-solver.html">Crossword Solver</a></li>
+                        <li><a href="/jumble-solver.html">Jumble Solver</a></li>
+                        <li><a href="/rhyming-dictionary.html">Rhyming Dictionary</a></li>
+                        <li><a href="/thesaurus.html">Thesaurus</a></li>
+                        <li><a href="/word-search-solver.html">Word Search Solver</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Pages</h4>
+                    <ul class="widget-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="currentColor"/>
+                        <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
+                    </svg>
+                    <span>UNSCRAMBLER</span>
+                </div>
+                <p class="copyright">&copy; 2025 Word Unscrambler. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <script src="jumble-solver.js"></script>
+</body>
+</html>

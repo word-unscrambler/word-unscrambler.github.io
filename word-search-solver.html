@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Word Search Solver - Find words hidden in a word search puzzle grid. Enter your grid and word list to solve.">
+    <meta name="keywords" content="word search solver, word search helper, puzzle solver, word finder, grid solver">
+    <meta name="author" content="Word Unscrambler">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://word-unscrambler.github.io/word-search-solver.html">
+    <meta property="og:title" content="Word Search Solver - Find Hidden Words">
+    <meta property="og:description" content="Solve word search puzzles instantly. Enter your grid and find all hidden words.">
+    <meta property="og:image" content="https://word-unscrambler.github.io/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://word-unscrambler.github.io/word-search-solver.html">
+    <meta name="twitter:title" content="Word Search Solver - Find Hidden Words">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' text-anchor='middle' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
+    <link rel="canonical" href="https://word-unscrambler.github.io/word-search-solver.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>Word Search Solver | Find Hidden Words</title>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Word Search Solver",
+        "description": "Find words hidden in a word search puzzle grid. Enter your grid and word list to solve.",
+        "url": "https://word-unscrambler.github.io/word-search-solver.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Word Unscrambler",
+            "url": "https://word-unscrambler.github.io/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://word-unscrambler.github.io/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Word Search Solver",
+            "item": "https://word-unscrambler.github.io/word-search-solver.html"
+        }]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" fill="currentColor"/>
+                    <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
+                </svg>
+                <span class="logo-text">UNSCRAMBLER</span>
+            </a>
+            <nav class="nav">
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-btn">
+                        Tools
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="/">Word Unscrambler</a>
+                        <a href="/crossword-solver.html">Crossword Solver</a>
+                        <a href="/jumble-solver.html">Jumble Solver</a>
+                        <a href="/rhyming-dictionary.html">Rhyming Dictionary</a>
+                        <a href="/thesaurus.html">Thesaurus</a>
+                        <a href="/word-search-solver.html">Word Search Solver</a>
+                    </div>
+                </div>
+                <a href="/#features" class="nav-link">Features</a>
+                <a href="/about.html" class="nav-link">About</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <span class="mobile-nav-section">Tools</span>
+        <a href="/" class="mobile-nav-link">Word Unscrambler</a>
+        <a href="/crossword-solver.html" class="mobile-nav-link">Crossword Solver</a>
+        <a href="/jumble-solver.html" class="mobile-nav-link">Jumble Solver</a>
+        <a href="/rhyming-dictionary.html" class="mobile-nav-link">Rhyming Dictionary</a>
+        <a href="/thesaurus.html" class="mobile-nav-link">Thesaurus</a>
+        <a href="/word-search-solver.html" class="mobile-nav-link">Word Search Solver</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    <span class="badge">GRID SOLVER</span>
+                </div>
+                <h1 class="hero-title">Word Search<br><span class="highlight">Solver</span></h1>
+                <p class="hero-subtitle">Find hidden words in any word search puzzle. Enter your grid and the words to find.</p>
+                
+                <div class="tool-container word-search-tool">
+                    <div class="grid-input-section">
+                        <label class="input-label">Paste your word search grid:</label>
+                        <textarea 
+                            id="gridInput" 
+                            class="grid-textarea" 
+                            placeholder="CATDOGS
+RATHATS
+OEBMICE
+WORMFOX"
+                            rows="8"
+                            spellcheck="false"
+                        ></textarea>
+                    </div>
+                    
+                    <div class="words-input-section">
+                        <label class="input-label">Words to find (one per line):</label>
+                        <textarea 
+                            id="wordsInput" 
+                            class="words-textarea" 
+                            placeholder="CAT
+DOG
+RAT
+HAT"
+                            rows="4"
+                            spellcheck="false"
+                        ></textarea>
+                    </div>
+                    
+                    <button class="unscramble-btn" id="solveBtn">
+                        <span>FIND WORDS</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>Searching grid...</span>
+                </div>
+
+                <div class="results-container" id="resultsContainer">
+                    <div class="results-header">
+                        <h2 class="results-title">
+                            <span id="resultsCount">0</span> Words Found
+                        </h2>
+                    </div>
+                    <div class="word-search-results" id="resultsGrid"></div>
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                        <line x1="3" x2="21" y1="9" y2="9"></line>
+                        <line x1="3" x2="21" y1="15" y2="15"></line>
+                        <line x1="9" x2="9" y1="3" y2="21"></line>
+                        <line x1="15" x2="15" y1="3" y2="21"></line>
+                    </svg>
+                    <p>Enter a grid and words to search</p>
+                    <p class="hint-text">Finds words horizontally, vertically, and diagonally!</p>
+                </div>
+
+                <div class="no-results hidden" id="noResults">
+                    <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                        <line x1="8" x2="14" y1="11" y2="11"></line>
+                    </svg>
+                    <p>No words found in the grid!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How To Use</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3>Paste Grid</h3>
+                        <p>Copy and paste your word search puzzle grid.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3>Add Words</h3>
+                        <p>Enter the words you need to find, one per line.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3>Get Locations</h3>
+                        <p>See exactly where each word is hidden!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="widget-title">About</h4>
+                    <p class="widget-text">Word Unscrambler provides free word puzzle tools to help you solve crosswords, jumbles, and more.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Tools</h4>
+                    <ul class="widget-links">
+                        <li><a href="/">Word Unscrambler</a></li>
+                        <li><a href="/crossword-solver.html">Crossword Solver</a></li>
+                        <li><a href="/jumble-solver.html">Jumble Solver</a></li>
+                        <li><a href="/rhyming-dictionary.html">Rhyming Dictionary</a></li>
+                        <li><a href="/thesaurus.html">Thesaurus</a></li>
+                        <li><a href="/word-search-solver.html">Word Search Solver</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4 class="widget-title">Pages</h4>
+                    <ul class="widget-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="currentColor"/>
+                        <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
+                    </svg>
+                    <span>UNSCRAMBLER</span>
+                </div>
+                <p class="copyright">&copy; 2025 Word Unscrambler. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <script src="word-search-solver.js"></script>
+</body>
+</html>
