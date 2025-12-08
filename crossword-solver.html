@@ -277,6 +277,37 @@
         </section>
     </main>
 
+    <section class="content-text" id="deep-dive">
+            <div class="container">
+                <h2 class="section-title">The Crossword Solver: Your Guide to Grid Mastery</h2>
+                
+                <p>The Crossword Solver is the ultimate digital tool designed to help you conquer even the most challenging crossword puzzles. Unlike simple dictionary lookups, this solver specializes in one critical feature: pattern matching. It allows you to transform partial knowledge—a few known letters and a required length—into a comprehensive list of potential answers, drastically simplifying the process of filling in those tough, blank squares in your grid. Whether you're a casual puzzler or a competitive enthusiast, this tool provides both speed and accuracy.</p>
+                
+                <h3 class="section-subtitle">The Core Mechanism: Pattern Matching with the Wildcard ($?$)</h3>
+                <p>The entire function of the Crossword Solver revolves around the use of the question mark (?) wildcard. When you encounter a clue and know the length of the word—say, five letters—and perhaps already have the first and third letters filled in, the Solver can take that partial information, such as <span class="pattern-example">C?T??</span>, and generate a list of every valid English word that matches that exact structure. The system treats the wildcard as a placeholder for *any* single letter. This is far more powerful than traditional searching, as it focuses the dictionary lookup purely on structural integrity.</p>
+                
+                <p>For example, entering "S?A?E" will instantly yield results like "SHARE," "SHAME," "STALE," and "SPACE." This efficient search is achieved through an optimized, pre-indexed dictionary where word entries are indexed by length and letter position, ensuring that the solving process is instantaneous, regardless of the complexity of the pattern or the size of the vocabulary database.</p>
+                
+                <h2 class="section-title">Using Clues and Length to Refine Results</h2>
+                <p>A typical crossword clue gives you two essential pieces of information: the definition (or a synonym) and the length. The Crossword Solver capitalizes on both to maximize your efficiency.</p>
+                
+                <h3 class="section-subtitle">Filtering by Length</h3>
+                <p>The most basic and powerful filter is word length. Crossword grids demand precision, and knowing a word must be exactly 7 letters long is often half the battle. After entering a pattern like <span class="pattern-example">?O?O?A?E</span>, you can use the Length Filter dropdown to immediately narrow results to only those 7-letter words, eliminating all shorter or longer possibilities. This control saves significant time and mental effort, allowing you to focus on the semantic match with the clue.</p>
+                
+                <h3 class="section-subtitle">Adding Constraints: Starts With Filter</h3>
+                <p>Beyond the structural pattern, you can apply further constraints using the Starts With filter. If your clue suggests a word beginning with a vowel, or you are highly confident the answer starts with a specific letter based on an intersecting word, you can specify this letter in the filter. This feature works in conjunction with the main pattern input, providing an extra layer of narrowing down the result set, which is particularly useful for very common patterns that might otherwise yield hundreds of results. For instance, combining the pattern <span class="pattern-example">P?T</span> with a 'Starts with: C' filter would yield 'COT' if that word was a potential answer, while excluding 'POT' and 'BUT'.</p>
+                
+                <h2 class="section-title">User Experience: Dark and Light Theme Toggle</h2>
+                <p>Recognizing that crossword enthusiasts often spend extended periods looking at the screen—sometimes late into the night—the Crossword Solver is equipped with a versatile theme toggle, located conveniently in the header. This toggle switches the entire interface between a bright Light Theme and a low-light Dark Theme.</p>
+                
+                <h3 class="section-subtitle">Reducing Eye Strain with the Dark Theme</h3>
+                <p>The Dark Theme employs a dark background with light text, a color scheme specifically chosen to reduce the amount of light emitted from the screen. This is incredibly beneficial in low-light environments, as it minimizes digital eye strain and prevents the discomfort often associated with high-contrast screens in the dark. All elements, including the tool container, input field, and the organized results grid, are meticulously re-styled to maintain high readability while ensuring a comfortable, immersive solving experience. The elegant monospace font is preserved in both themes for maximum clarity of letter patterns.</p>
+                
+                <h3 class="section-subtitle">Accessibility and Consistency</h3>
+                <p>The application is built to save your preferred theme locally, so the next time you open the Crossword Solver, it automatically loads in your chosen mode. This attention to detail in user experience ensures the tool is accessible and comfortable for every user, enhancing focus on the task at hand: mastering the crossword grid. The result display—showing the total number of matches and grouping answers by length—is designed for instant comprehension, whether you are in a brightly lit office or solving a final clue under a reading lamp.</p>
+            </div>
+        </section>
+
     <!-- Footer -->
     <footer class="footer" id="about">
         <div class="container">
