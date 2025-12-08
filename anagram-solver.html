@@ -620,6 +620,36 @@
                 </div>
             </div>
         </section>
+
+        <section class="content-text" id="deep-dive">
+            <div class="container">
+                <h2 class="section-title">The Power Behind the Anagram Solver</h2>
+                
+                <p>The **Anagram Solver** is an essential tool for enthusiasts of word games, literary puzzles, and creative writing. An anagram is a word or phrase formed by rearranging the letters of another word or phrase, such as "listen" becoming "silent," or the letters of "funeral" rearranging to spell "real fun." Our solver is designed to take a set of scrambled letters and quickly produce every possible valid English word that can be formed from that input, dramatically accelerating your game play and vocabulary exploration.</p>
+                
+                <p>When you enter your letters into the input field and click **"FIND ANAGRAMS,"** the system performs a sophisticated computational process. Instead of simply generating every possible permutation of the letters (which would be astronomically large for inputs over 10 letters), the solver first processes your input. It creates a unique *signature* or *canonical form* for your letters by sorting them alphabetically (e.g., 'listen' becomes 'eilnst'). This allows for an efficient lookup against a massive, optimized dictionary where every word is already stored by its own canonical form. This method ensures that even long inputs like 'conversation' can be processed with lightning speed, preventing the user experience from being bogged down by brute-force permutations.</p>
+                
+                <p>The true power of this tool lies in its ability to find both **Complete Anagrams** and **Partial Anagrams**.</p>
+                
+                <p>### 🧩 Complete Anagrams: Using All Letters</p>
+                <p>A complete anagram utilizes *every* single letter from the input exactly once. These are typically the hardest to find in word games like Scrabble or Words With Friends, especially when dealing with high-value tiles. For example, if you input **"triangle,"** a complete anagram is the word **"integral."** This feature is crucial for maximizing your score in competitive word environments or simply challenging your mind to find the most comprehensive solution.</p>
+                
+                <p>### 🔍 Partial Anagrams: Shorter Word Discovery</p>
+                <p>Often, the goal isn't just one long word, but many shorter words that can be formed from the subset of available letters. These are known as partial anagrams. If you enter **"dictionary,"** the solver will not only search for a single ten-letter word (which is a rare feat) but will also produce all 9-letter, 8-letter, and down to the minimum length you set, such as 3- or 4-letter words, like "not," "tin," "action," and "credit." This is invaluable for finding combinations that fit remaining spaces on a game board or solving clues in a challenging crossword puzzle.</p>
+                
+                <p>### ⚙️ Refining Your Search with Filters and Advanced Options</p>
+                <p>To make the results even more useful, the Anagram Solver includes a robust filtering system:</p>
+                
+                <p>* **Minimum and Maximum Length:** These filters allow you to narrow down the result set instantly. If you are looking for a six-letter word, you can set both the minimum and maximum lengths to '6' and eliminate the distraction of shorter or longer results.</p>
+                <p>* **Sort By:** Results can be sorted by **Word Length** (to see the longest words first), **Alphabetical** order, or by **Most Common** usage, which can be particularly helpful for quickly identifying words you are most likely to recognize or use in a game.</p>
+                <p>* **Pattern Matching:** Available under **Advanced Options**, this feature revolutionizes puzzle-solving. By using the question mark (**?**) as a wildcard for an unknown letter, you can search for anagrams that fit a specific structure. For example, if you have the letters 'R, S, T, E, D' and you know the word starts with a 'C' (which you don't have) and ends in 'T', you could search for the pattern <span class="pattern-example">?R?T</span>, using your available letters to fill the wildcards and find words like 'START' or 'RAST'. The flexibility of this feature is limited only by your imagination and the length of your input.</p>
+                
+                <p>The informational boxes below the search area provide instant feedback: **Input Letters** confirms your count, **Anagrams Found** gives you an immediate count of valid words, and **Longest Word** highlights the most rewarding discovery, all aiding in an efficient and engaging problem-solving experience.</p>
+                
+                <p>### 🎨 User Experience: The Dark and Light Theme Toggle</p>
+                <p>We understand that users interact with tools at different times of the day and under various lighting conditions. This is why the Anagram Solver is equipped with a seamless **theme toggle**—the sun/moon icon in the header—that switches the entire interface between a **Light Theme** and a **Dark Theme**. The light theme provides high-contrast text on a bright background, perfect for use in well-lit environments or during the day. Conversely, the dark theme utilizes a darker background with lighter text, significantly reducing eye strain, especially during late-night puzzle sessions or in low-light conditions. This feature isn't just aesthetic; it’s a commitment to accessibility and user comfort. All core components, including the input fields, filters, results boxes, and the elegant monospace font used for clarity, are meticulously styled to maintain readability and the sleek, code-like aesthetic of the interface in both modes. The theme choice is typically saved locally, ensuring the solver remembers your preference the next time you visit, providing a consistently comfortable word-finding experience, day or night.</p>
+            </div>
+        </section>
         
         <section class="features" id="features">
             <div class="container">
