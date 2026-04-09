@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Word Unscrambler Latest Updates</title>
+    <meta name="description" content="Stay updated with the latest news, tips, and strategies for word games and unscrambling letters.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-hero {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 80px;
+        }
+        .article-card {
+            background: var(--bg-primary);
+            border: 4px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .article-card:hover {
+            transform: translate(-6px, -6px);
+            box-shadow: 8px 8px 0 var(--border-color);
+        }
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--border-color);
+        }
+        .article-content {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-meta {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .article-title {
+            font-size: 22px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .article-excerpt {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+        .read-more {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+        }
+        @media (max-width: 480px) {
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <section class="blog-hero">
+            <div class="hero-badge">
+                <span class="badge">UPDATES & GUIDES</span>
+            </div>
+            <h1 class="hero-title">The <span class="highlight">Word</span> Blog</h1>
+            <p class="hero-subtitle">Master the art of unscrambling with our latest news and expert strategies.</p>
+        </section>
+
+        <div class="blog-grid">
+            <a href="#" class="article-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="New Algorithm" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>Updates</span>
+                        <span>April 9, 2026</span>
+                    </div>
+                    <h3 class="article-title">Announcing Our New Lightning-Fast Search Engine</h3>
+                    <p class="article-excerpt">We've upgraded our core algorithm to process over 450,000 words in under 10 milliseconds. Experience the speed.</p>
+                    <div class="read-more">Read Entry →</div>
+                </div>
+            </a>
+
+            <a href="#" class="article-card">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="Scrabble Tips" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>Strategy</span>
+                        <span>April 9, 2026</span>
+                    </div>
+                    <h3 class="article-title">How to Win at Scrabble Using Our Unscrambler</h3>
+                    <p class="article-excerpt">Learn how to strategically use your jumbled letters to find high-scoring tiles and dominate your next game night.</p>
+                    <div class="read-more">Read Entry →</div>
+                </div>
+            </a>
+
+            <a href="#" class="article-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Dark Mode" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>Design</span>
+                        <span>April 9, 2026</span>
+                    </div>
+                    <h3 class="article-title">Brutalist Design: Why We Chose High Contrast</h3>
+                    <p class="article-excerpt">A deep dive into our design philosophy and how it improves readability for power users and mobile players.</p>
+                    <div class="read-more">Read Entry →</div>
+                </div>
+            </a>
+
+            <a href="#" class="article-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Developer Update" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>Dev Log</span>
+                        <span>April 9, 2026</span>
+                    </div>
+                    <h3 class="article-title">Mobile Viewer Integration for Word Puzzles</h3>
+                    <p class="article-excerpt">We've optimized our tools for every screen size using our internal mobile viewer testing protocol.</p>
+                    <div class="read-more">Read Entry →</div>
+                </div>
+            </a>
+
+            <a href="#" class="article-card">
+                <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80" alt="Word Lists" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>Dictionary</span>
+                        <span>April 9, 2026</span>
+                    </div>
+                    <h3 class="article-title">10,000 New Words Added to the Database</h3>
+                    <h3 class="article-title"></h3>
+                    <p class="article-excerpt">From modern slang to technical jargon, our dictionary just got a massive expansion to help you find every word.</p>
+                    <div class="read-more">Read Entry →</div>
+                </div>
+            </a>
+
+            <a href="#" class="article-card">
+                <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=600&q=80" alt="Community" class="article-image">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span>Community</span>
+                        <span>April 9, 2026</span>
+                    </div>
+                    <h3 class="article-title">User Stories: How Devs Use Word Unscrambler</h3>
+                    <p class="article-excerpt">Interviews with developers who use our API and web tools to build their own unique word games and utilities.</p>
+                    <div class="read-more">Read Entry →</div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        // Simple theme toggle initialization for this page
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('themeToggle');
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+            
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        });
+    </script>
+</body>
+</html>
