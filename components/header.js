@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHTML = `
     <header class="header">
         <div class="container header-content">
-            <a href="/" class="logo">
+            <a href="/logo.png" class="logo">
                 <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="32" height="32" fill="currentColor"/>
                     <text x="16" y="22" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="var(--bg-primary)">W</text>
