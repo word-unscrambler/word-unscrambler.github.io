@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHTML = `
     <header class="header">
         <div class="container header-content">
-            <a href="/logo.png" class="logo">            
+            <a href="/" class="logo">
+                <img src="/logo.png" alt="Word Unscrambler Logo" class="logo-icon-img" width="32" height="32">
                 <span class="logo-text">UNSCRAMBLER</span>
             </a>
             <nav class="nav">
