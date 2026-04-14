@@ -21,23 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h4 class="widget-title">Tools</h4>
                     <ul class="widget-links">
                         <li><a href="/">Word Unscrambler</a></li>
-                        <li><a href="/crossword-solver.html">Crossword Solver</a></li>
-                        <li><a href="/jumble-solver.html">Jumble Solver</a></li>
-                        <li><a href="/rhyming-dictionary.html">Rhyming Dictionary</a></li>
-                        <li><a href="/thesaurus.html">Thesaurus</a></li>
-                        <li><a href="/word-search-solver.html">Word Search Solver</a></li>
-                        <li><a href="/hangman.html">Hangman Game</a></li>
-                        <li><a href="/anagram-solver.html">Anagram Solver</a></li>
+                        <li><a href="/crossword-solver">Crossword Solver</a></li>
+                        <li><a href="/jumble-solver">Jumble Solver</a></li>
+                        <li><a href="/rhyming-dictionary">Rhyming Dictionary</a></li>
+                        <li><a href="/thesaurus">Thesaurus</a></li>
+                        <li><a href="/word-search-solver">Word Search Solver</a></li>
+                        <li><a href="/hangman">Hangman Game</a></li>
+                        <li><a href="/anagram-solver">Anagram Solver</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-widget">
                     <h4 class="widget-title">Pages</h4>
                     <ul class="widget-links">
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/blog">Blog</a></li>
                     </ul>
                 </div>
 
