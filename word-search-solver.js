@@ -1,4 +1,4 @@
-// Word Search Solver App
+// Word Search Solver App - FIXED VERSION
 
 const gridInput = document.getElementById("gridInput")
 const wordsInput = document.getElementById("wordsInput")
@@ -9,11 +9,10 @@ const resultsCount = document.getElementById("resultsCount")
 const resultsGrid = document.getElementById("resultsGrid")
 const emptyState = document.getElementById("emptyState")
 const noResults = document.getElementById("noResults")
-const themeToggle = document.getElementById("themeToggle")
-const mobileMenuToggle = document.getElementById("mobileMenuToggle")
-const mobileNav = document.getElementById("mobileNav")
 const toast = document.getElementById("toast")
 const toastMessage = document.getElementById("toastMessage")
+
+// REMOVED: themeToggle and mobileMenuToggle (not in HTML)
 
 // Directions for word search
 const directions = [
@@ -29,13 +28,12 @@ const directions = [
 
 function init() {
   setupEventListeners()
-  initTheme()
+  // REMOVED: initTheme() - themeToggle doesn't exist
 }
 
 function setupEventListeners() {
   solveBtn.addEventListener("click", solveWordSearch)
-  themeToggle.addEventListener("click", toggleTheme)
-  mobileMenuToggle.addEventListener("click", () => mobileNav.classList.toggle("active"))
+  // REMOVED: themeToggle and mobileMenuToggle listeners
 }
 
 function solveWordSearch() {
@@ -173,20 +171,7 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove("active"), 3000)
 }
 
-function initTheme() {
-  const savedTheme = localStorage.getItem("theme")
-  if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme)
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    document.documentElement.setAttribute("data-theme", "dark")
-  }
-}
+// REMOVED: initTheme() and toggleTheme() functions
 
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute("data-theme")
-  const newTheme = currentTheme === "dark" ? "light" : "dark"
-  document.documentElement.setAttribute("data-theme", newTheme)
-  localStorage.setItem("theme", newTheme)
-}
-
+// Initialize the app
 init()
