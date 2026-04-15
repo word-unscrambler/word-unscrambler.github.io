@@ -1,236 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXJTCKFWQL"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXJTCKFWQL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CXJTCKFWQL');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Word Search Solver - Find words hidden in a word search puzzle grid. Enter your grid and word list to solve.">
-    <meta name="keywords" content="word search solver, word search helper, puzzle solver, word finder, grid solver">
-    <meta name="author" content="Word Unscrambler">
-    <meta name="robots" content="index, follow">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://word-unscrambler.github.io/word-search-solver">
-    <meta property="og:title" content="Word Search Solver - Find Hidden Words">
-    <meta property="og:description" content="Solve word search puzzles instantly. Enter your grid and find all hidden words.">
-    <meta property="og:image" content="https://word-unscrambler.github.io/og-image.png">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://word-unscrambler.github.io/word-search-solver">
-    <meta name="twitter:title" content="Word Search Solver - Find Hidden Words">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="canonical" href="https://word-unscrambler.github.io/word-search-solver">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <title>Word Search Solver | Find Hidden Words</title>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Word Search Solver",
-        "description": "Find words hidden in a word search puzzle grid. Enter your grid and word list to solve.",
-        "url": "https://word-unscrambler.github.io/word-search-solver",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "Word Unscrambler",
-            "url": "https://word-unscrambler.github.io/"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://word-unscrambler.github.io/"
-        },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Word Search Solver",
-            "item": "https://word-unscrambler.github.io/word-search-solver"
-        }]
-    }
-    </script>
-    
-    <link rel="stylesheet" href="styles.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Word Search Solver - Find words hidden in a word search puzzle grid. Enter your grid and word list to solve.">
+<meta name="keywords" content="word search solver, word search helper, puzzle solver, word finder, grid solver">
+<meta name="author" content="Word Unscrambler">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://word-unscrambler.github.io/word-search-solver.html">
+<meta property="og:title" content="Word Search Solver - Find Hidden Words">
+<meta property="og:description" content="Solve word search puzzles instantly. Enter your grid and find all hidden words.">
+<meta property="og:image" content="https://word-unscrambler.github.io/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://word-unscrambler.github.io/word-search-solver.html">
+<meta name="twitter:title" content="Word Search Solver - Find Hidden Words">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300e5ff'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='18' font-weight='900' text-anchor='middle' fill='%23080b10'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://word-unscrambler.github.io/word-search-solver.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<title>Word Search Solver | Find Hidden Words in Any Puzzle Grid</title>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Word Search Solver",
+    "description": "Find words hidden in a word search puzzle grid. Enter your grid and word list to solve.",
+    "url": "https://word-unscrambler.github.io/word-search-solver.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://word-unscrambler.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Word Search Solver", "item": "https://word-unscrambler.github.io/word-search-solver.html" }
+    ]
+}
+</script>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* Word Search specific extra styles */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .grid-layout { grid-template-columns: 1fr; }
+}
+
+.input-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.panel-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+}
+
+/* Visual grid preview */
+.grid-preview {
+    margin-top: 24px;
+    overflow-x: auto;
+}
+
+.grid-preview-inner {
+    display: inline-grid;
+    gap: 3px;
+    border: 1px solid var(--border-dim);
+    padding: 12px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-surface);
+}
+
+.grid-cell {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    background: var(--bg-raised);
+    transition: all 0.2s;
+}
+
+.grid-cell.highlighted {
+    background: var(--accent);
+    color: var(--bg-void);
+    font-weight: 700;
+}
+
+.grid-cell.multi-highlight {
+    background: var(--neon-pink);
+    color: var(--bg-void);
+}
+
+/* Direction badge */
+.dir-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    background: var(--bg-raised);
+    border: 1px solid var(--border-dim);
+    color: var(--text-muted);
+}
+
+.dir-badge.h  { border-color: rgba(0,229,255,0.3); color: var(--accent); }
+.dir-badge.v  { border-color: rgba(57,255,136,0.3); color: var(--neon-green); }
+.dir-badge.d  { border-color: rgba(192,132,252,0.3); color: var(--neon-purple); }
+
+/* Word result row */
+.word-result-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius-lg);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.word-result-row:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+}
+
+.word-result-row.found { border-left: 3px solid var(--neon-green); }
+.word-result-row.not-found { border-left: 3px solid var(--neon-pink); opacity: 0.6; }
+
+.word-result-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.word-result-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.coord-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Stat bar */
+.solve-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 20px;
+    background: var(--bg-raised);
+    border: 1px solid var(--border-dim);
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.solve-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.solve-stat-value {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.solve-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.solve-stats-divider {
+    width: 1px;
+    height: 32px;
+    background: var(--border-dim);
+}
+</style>
 </head>
 <body>
-    <!-- Header -->    
 
-    <!-- Mobile Navigation -->
-    <!-- Added tools links to mobile nav -->
-    <nav class="mobile-nav" id="mobileNav">
-        <span class="mobile-nav-section">Tools</span>
-        <a href="/" class="mobile-nav-link">Word Unscrambler</a>
-        <a href="/crossword-solver.html" class="mobile-nav-link">Crossword Solver</a>
-        <a href="/jumble-solver.html" class="mobile-nav-link">Jumble Solver</a>
-        <a href="/rhyming-dictionary.html" class="mobile-nav-link">Rhyming Dictionary</a>
-        <a href="/thesaurus.html" class="mobile-nav-link">Thesaurus</a>
-        <a href="/word-search-solver" class="mobile-nav-link">Word Search Solver</a>
-        <a href="/hangman.html" class="mobile-nav-link">Hangman Game</a>
-        <a href="/anagram-solver.html" class="mobile-nav-link">Anagram Solver</a>
-        <span class="mobile-nav-section">Navigation</span>
-        <a href="#features" class="mobile-nav-link">Features</a>
-        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
-        <a href="#about" class="mobile-nav-link">About</a>
-    </nav>
+<!-- ── HEADER ── -->
+<header class="header">
+    <div class="container header-content">
+        <a href="/" class="logo">
+            <div class="logo-icon">W</div>
+            <span class="logo-text">UNSCRAMBLER</span>
+        </a>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-badge"><span class="badge">⚡ GRID SOLVER</span></div>
-                <h1 class="hero-title">Word Search<br><span class="highlight">Solver</span></h1>
-                <p class="hero-subtitle">Paste your grid, enter the words. Find hidden words in any direction — instantly.</p>
-                
-                <div class="tool-container">
-                    <div class="grid-input-section">
-                        <label class="input-label">📋 Word search grid</label>
-                        <textarea id="gridInput" class="grid-textarea" placeholder="CATDOGS&#10;RATHATS&#10;OEBMICE&#10;WORMFOX" rows="6" spellcheck="false">CATDOGS
-RATHATS
-OEBMICE
-WORMFOX</textarea>
+        <nav class="nav">
+            <div class="nav-dropdown">
+                <button class="nav-link nav-dropdown-btn">
+                    Tools
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="nav-dropdown-content">
+                    <a href="/">Word Unscrambler</a>
+                    <a href="/crossword-solver.html">Crossword Solver</a>
+                    <a href="/jumble-solver.html">Jumble Solver</a>
+                    <a href="/rhyming-dictionary.html">Rhyming Dictionary</a>
+                    <a href="/thesaurus.html">Thesaurus</a>
+                    <a href="/word-search-solver.html">Word Search Solver</a>
+                    <a href="/hangman.html">Hangman Game</a>
+                    <a href="/anagram-solver.html">Anagram Solver</a>
+                </div>
+            </div>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#how-it-works" class="nav-link">How It Works</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2m-8.66-14 1.41 1.41M19.25 19.25l1.41 1.41M2 12h2m16 0h2m-3.75-8.66-1.41 1.41M4.75 19.25l-1.41 1.41"></path>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="7" y2="7"></line>
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="17" y2="17"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ── MOBILE NAV ── -->
+<nav class="mobile-nav" id="mobileNav">
+    <span class="mobile-nav-section">Tools</span>
+    <a href="/" class="mobile-nav-link">Word Unscrambler</a>
+    <a href="/crossword-solver.html" class="mobile-nav-link">Crossword Solver</a>
+    <a href="/jumble-solver.html" class="mobile-nav-link">Jumble Solver</a>
+    <a href="/rhyming-dictionary.html" class="mobile-nav-link">Rhyming Dictionary</a>
+    <a href="/thesaurus.html" class="mobile-nav-link">Thesaurus</a>
+    <a href="/word-search-solver.html" class="mobile-nav-link">Word Search Solver</a>
+    <a href="/hangman.html" class="mobile-nav-link">Hangman Game</a>
+    <a href="/anagram-solver.html" class="mobile-nav-link">Anagram Solver</a>
+    <span class="mobile-nav-section">Navigation</span>
+    <a href="#features" class="mobile-nav-link">Features</a>
+    <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+</nav>
+
+<main>
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-tiles" aria-hidden="true" id="heroTiles"></div>
+
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge">Grid Solver</span>
+            </div>
+
+            <h1 class="hero-title">
+                Word Search<br>
+                <span class="highlight">Solver</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Find every hidden word in any puzzle grid — horizontal, vertical, and all four diagonals. Instantly.
+            </p>
+
+            <!-- Tool -->
+            <div class="tool-container word-search-tool" style="max-width:780px;">
+
+                <div class="grid-layout">
+                    <div class="input-panel">
+                        <div class="panel-label">
+                            <label class="input-section-label" for="gridInput">Paste word search grid</label>
+                            <span class="panel-hint">One row per line</span>
+                        </div>
+                        <textarea
+                            id="gridInput"
+                            class="grid-textarea"
+                            placeholder="CATDOGS&#10;RATHATS&#10;OEBMICE&#10;WORMFOX"
+                            rows="9"
+                            spellcheck="false"
+                        ></textarea>
                     </div>
-                    <div class="words-input-section">
-                        <label class="input-label">🔍 Words to find (one per line)</label>
-                        <textarea id="wordsInput" class="words-textarea" placeholder="CAT&#10;DOG&#10;RAT&#10;HAT" rows="4" spellcheck="false">CAT
-DOG
-RAT
-HAT
-ICE
-FOX</textarea>
+
+                    <div class="input-panel">
+                        <div class="panel-label">
+                            <label class="input-section-label" for="wordsInput">Words to find</label>
+                            <span class="panel-hint">One word per line</span>
+                        </div>
+                        <textarea
+                            id="wordsInput"
+                            class="words-textarea"
+                            placeholder="CAT&#10;DOG&#10;RAT&#10;HAT&#10;MICE&#10;WORM"
+                            rows="9"
+                            spellcheck="false"
+                        ></textarea>
                     </div>
-                    <button class="unscramble-btn" id="solveBtn">
-                        <span>FIND WORDS</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+
+                <button class="unscramble-btn" id="solveBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
+                    <span>Find Words</span>
+                </button>
+            </div>
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <span>Scanning grid...</span>
+            </div>
+
+            <!-- Results -->
+            <div class="results-container" id="resultsContainer" style="max-width:780px;">
+                <!-- Stats bar -->
+                <div class="solve-stats" id="solveStats">
+                    <div class="solve-stat">
+                        <span class="solve-stat-value" id="foundCount">0</span>
+                        <span class="solve-stat-label">Found</span>
+                    </div>
+                    <div class="solve-stats-divider"></div>
+                    <div class="solve-stat">
+                        <span class="solve-stat-value" id="totalCount">0</span>
+                        <span class="solve-stat-label">Total</span>
+                    </div>
+                    <div class="solve-stats-divider"></div>
+                    <div class="solve-stat">
+                        <span class="solve-stat-value" id="gridSize">—</span>
+                        <span class="solve-stat-label">Grid Size</span>
+                    </div>
+                </div>
+
+                <div class="results-header">
+                    <h2 class="results-title">
+                        Results
+                    </h2>
+                </div>
+                <div class="word-search-results" id="resultsGrid"></div>
+            </div>
+
+            <!-- Empty state -->
+            <div class="empty-state" id="emptyState">
+                <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                    <line x1="3" x2="21" y1="9" y2="9"></line>
+                    <line x1="3" x2="21" y1="15" y2="15"></line>
+                    <line x1="9" x2="9" y1="3" y2="21"></line>
+                    <line x1="15" x2="15" y1="3" y2="21"></line>
+                </svg>
+                <p>Paste your grid and words above to begin</p>
+                <p class="hint-text">Searches all 8 directions simultaneously ✦</p>
+            </div>
+
+            <!-- No results -->
+            <div class="no-results hidden" id="noResults">
+                <svg class="no-results-icon" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    <line x1="8" x2="14" y1="11" y2="11"></line>
+                </svg>
+                <p>No words found in the grid!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Simple</span>
+                <h2 class="section-title">How To Use</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Paste Grid</h3>
+                    <p>Copy and paste your word search puzzle grid, one row per line.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Add Words</h3>
+                    <p>Enter the words you need to find, one per line.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Get Locations</h3>
+                    <p>See the exact row, column, and direction for every hidden word.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FEATURES ── -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Capabilities</span>
+                <h2 class="section-title">What It Does</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 14 4.5 4.5"/><path d="m3 3 3 3"/><path d="M3 21l3-3"/><path d="m21 3-3 3"/><path d="M14 3c3.3 0 6 2.7 6 6"/><path d="M10 21c-3.3 0-6-2.7-6-6"/></svg>
+                    </div>
+                    <h3>8 Directions</h3>
+                    <p>Scans horizontally, vertically, and all four diagonals — forwards and backwards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Exact Coordinates</h3>
+                    <p>Returns the starting and ending coordinates plus the direction for every found word.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                    </div>
+                    <h3>Any Grid Size</h3>
+                    <p>Works on small 5×5 grids all the way up to giant 25×25 puzzle boards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Algorithm runs in milliseconds. Solves a 20×20 grid with 30 words in under a second.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ── CONTENT TEXT ── -->
+<section class="content-text" id="deep-dive">
+    <div class="container">
+        <h2 class="section-title">The Word Search Solver: Instantly Conquer Any Puzzle Grid</h2>
+
+        <p>The Word Search Solver is the ultimate digital tool designed to help you instantly solve word search puzzles of any size and complexity. Word searches are engaging, yet time-consuming puzzles that require scanning a grid of letters to locate a predefined list of words hidden horizontally, vertically, or diagonally. When you're stuck on a final elusive word or simply need a quick solution to verify your answers, our word search helper provides the fastest, most accurate method to decode the grid.</p>
+
+        <p>To use the tool, you first input the letter grid exactly as it appears in your puzzle. Then, you provide the list of target words you are seeking. The solver employs pattern recognition algorithms to systematically scan every possible direction and starting point within the grid, immediately identifying the exact location of every hidden word.</p>
+
+        <h3 class="section-subtitle">How the Solver Scans the Puzzle</h3>
+        <p>The core mechanism involves an intelligent, directional search. Unlike manual solving, which relies on human visual perception and can lead to missed words, the solver executes a flawless, eight-directional scan for every word on the list:</p>
+
+        <ul>
+            <li><strong>Horizontal:</strong> Left-to-right and Right-to-left.</li>
+            <li><strong>Vertical:</strong> Top-to-bottom and Bottom-to-top.</li>
+            <li><strong>Diagonal:</strong> All four diagonal directions (up-left, up-right, down-left, down-right).</li>
+        </ul>
+
+        <p>For each letter in the grid, the algorithm simultaneously checks for the first letter of every target word. Once a match is found, it proceeds along all eight paths to see if the subsequent letters match the rest of the word. This process is repeated for every cell and every word in the list, ensuring no hidden word is overlooked.</p>
+
+        <h3 class="section-subtitle">Visualizing Word Location and Direction</h3>
+        <p>For each successfully located word, the solver provides the starting coordinates, the ending coordinates, and a clear indication of the path the word follows. This detailed output allows users to perfectly transcribe the solution back onto their physical puzzle.</p>
+
+        <h3 class="section-subtitle">Aiding Educators and Puzzle Creators</h3>
+        <p>Educators and content creators frequently use word searches for learning and engagement. Our word search solver can be used as a word search helper to verify that a puzzle is solvable, to generate an answer key, or to ensure that no unintended hidden words exist within the grid beyond the defined list.</p>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" id="about">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-widget">
+                <h4 class="widget-title">About</h4>
+                <p class="widget-text">Word Unscrambler is a free, fast, and powerful suite of word tools to help you tackle any word puzzle or game.</p>
+                <div class="social-links">
+                    <a href="https://github.com/word-unscrambler/word-unscrambler.github.io.git" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-widget">
+                <h4 class="widget-title">Tools</h4>
+                <ul class="widget-links">
+                    <li><a href="/">Word Unscrambler</a></li>
+                    <li><a href="/crossword-solver.html">Crossword Solver</a></li>
+                    <li><a href="/jumble-solver.html">Jumble Solver</a></li>
+                    <li><a href="/rhyming-dictionary.html">Rhyming Dictionary</a></li>
+                    <li><a href="/thesaurus.html">Thesaurus</a></li>
+                    <li><a href="/word-search-solver.html">Word Search Solver</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-widget">
+                <h4 class="widget-title">Pages</h4>
+                <ul class="widget-links">
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-widget">
+                <h4 class="widget-title">Subscribe</h4>
+                <p class="widget-text">Get updates on new features and word lists.</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="your@email.com" class="subscribe-input">
+                    <button class="subscribe-btn" aria-label="Subscribe">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
                     </button>
                 </div>
-
-                <div class="loading" id="loading"><div class="spinner"></div><span>Scanning grid...</span></div>
-
-                <div class="results-container" id="resultsContainer">
-                    <div class="results-header">
-                        <h2 class="results-title"><span id="resultsCount">0</span> Words Found</h2>
-                    </div>
-                    <div class="word-search-results" id="resultsGrid"></div>
-                </div>
-
-                <div class="empty-state" id="emptyState">
-                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
-                    <p>Enter a grid and words to search</p>
-                    <p class="hint-text">Finds words horizontally, vertically, and diagonally!</p>
-                </div>
-                <div class="no-results hidden" id="noResults">
-                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                    <p>No words found in the grid</p>
-                </div>
             </div>
-        </section>
+        </div>
 
-        <section class="how-it-works">
-            <div class="container">
-                <h2 class="section-title">How To Use</h2>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">01</div>
-                        <h3>Paste Grid</h3>
-                        <p>Copy and paste your word search puzzle grid.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">02</div>
-                        <h3>Add Words</h3>
-                        <p>Enter the words you need to find, one per line.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">03</div>
-                        <h3>Get Locations</h3>
-                        <p>See exactly where each word is hidden!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <section class="content-text" id="deep-dive">
-            <div class="container">
-                <h2 class="section-title">The Word Search Solver: Instantly Conquer Any Puzzle Grid</h2>
-                
-                <p>The Word Search Solver is the ultimate digital tool designed to help you instantly solve word search puzzles of any size and complexity. Word searches are engaging, yet time-consuming puzzles that require scanning a grid of letters to locate a predefined list of words hidden horizontally, vertically, or diagonally. When you're stuck on a final elusive word or simply need a quick solution to verify your answers, our word search helper provides the fastest, most accurate method to decode the grid. This tool transforms a challenging hunt into a simple, automated process.</p>
-                
-                <p>To use the tool, you first input the letter grid exactly as it appears in your puzzle. Then, you provide the list of target words you are seeking. The solver then employs sophisticated pattern recognition algorithms to systematically scan every possible direction and starting point within the grid, immediately identifying the exact location of every hidden word. This capability makes it the most effective grid solver available online for all word search enthusiasts.</p>
-                
-                <h3 class="section-subtitle">How the Solver Scans the Word Search Puzzle</h3>
-                <p>The core mechanism of the Word Search Solver involves an intelligent, directional search. Unlike manual solving, which relies on human visual perception and can lead to missed words, the solver executes a flawless, eight-directional scan for every word on the list:</p>
-                
-                <ul>
-                    <li>Horizontal: Left-to-right and Right-to-left.</li>
-                    <li>Vertical: Top-to-bottom and Bottom-to-top.</li>
-                    <li>Diagonal: All four diagonal directions (up-left, up-right, down-left, down-right).</li>
-                </ul>
-                
-                <p>For each letter in the grid, the algorithm simultaneously checks for the first letter of every target word. Once a match is found, it proceeds along all eight paths to see if the subsequent letters in the grid match the rest of the target word. This process is repeated for every cell in the grid and for every word in your list, ensuring absolutely no hidden word is overlooked. The result is a comprehensive map of solutions that would take hours to achieve manually, solidifying its place as the definitive word finder for puzzle games.</p>
-                
-                <h2 class="section-title">Key Features for Enhanced Puzzle Solving</h2>
-                <p>Our Word Search Solver includes specific features designed to enhance usability and provide maximum clarity when presenting the solutions.</p>
-                
-                <h3 class="section-subtitle">Visualizing Word Location and Direction</h3>
-                <p>The primary output of the solver is not just a list of found words, but a detailed report of their exact locations. For each successfully located word, the solver provides:</p>
-                
-                <ol>
-                    <li>The Starting Coordinates: The row and column of the word's first letter.</li>
-                    <li>The Ending Coordinates: The row and column of the word's last letter.</li>
-                    <li>The Direction: A clear indication (e.g., 'Diagonal Up-Left' or 'Horizontal Right') of the path the word follows.</li>
-                </ol>
-                
-                <p>This detailed output allows users to perfectly transcribe the solution back onto their physical puzzle, or simply understand how the word was hidden. This level of precision is critical when tackling custom or large, complex grids where words can intersect in confusing ways.</p>
-                
-                <h3 class="section-subtitle">Handling Complex Grid Inputs</h3>
-                <p>We recognize that modern word search puzzles can use grids of varying sizes and often include unique characters or spaces. Our solver is built to accommodate these variations with flexible input fields that manage large grids efficiently. The tool's robust parsing capabilities ensure that simple formatting errors in input do not derail the search process, making the entire experience intuitive and reliable. This dedication to flexibility makes it the go-to tool for solving puzzles sourced from books, newspapers, or custom-generated online word searches.</p>
-                
-                <h2 class="section-title">The Solver as an Educational and Efficiency Tool</h2>
-                <p>While the primary function is to solve word search puzzles, the tool also serves a valuable educational purpose and is a powerful aid in content creation.</p>
-                
-                <h3 class="section-subtitle">Aiding Educators and Puzzle Creators</h3>
-                <p>Educators and content creators frequently use word searches for learning and engagement. Our word search solver can be used as a word search helper to verify that a puzzle is solvable, to generate an answer key, or to ensure that no unintended, hidden words exist within the grid beyond the defined list. By quickly checking the solvability and integrity of a puzzle before distribution, users can maintain the quality and focus of their educational materials.</p>
-                
-                <h3 class="section-subtitle">Focus and Seamless Experience</h3>
-                <p>The user interface is engineered for maximum readability and a clean, direct solving process. With a design optimized for clarity and speed, the focus remains entirely on the puzzle and the results, guaranteeing a smooth and productive experience whether you are tackling a quick five-word challenge or a massive, complicated grid.</p>
-            </div>
-        </section>
-
-    <!-- Footer -->   
-
-    <div class="toast" id="toast">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-        </svg>
-        <span id="toastMessage">Copied to clipboard!</span>
+        <div class="footer-bottom">
+            <a href="/" class="footer-logo">
+                <div class="logo-icon">W</div>
+                <span>UNSCRAMBLER</span>
+            </a>
+            <p class="copyright">&copy; 2025 Word Unscrambler. All rights reserved.</p>
+        </div>
     </div>
+</footer>
 
-    <script src="word-search-solver.js"></script>
-    <script src="components/header.js"></script>
-    <script src="components/footer.js"></script>
+<!-- Toast -->
+<div class="toast" id="toast">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span id="toastMessage">Copied to clipboard!</span>
+</div>
+
+<script>
+// ── Theme Toggle ──
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+const saved = localStorage.getItem('theme');
+if (saved) html.setAttribute('data-theme', saved);
+themeBtn?.addEventListener('click', () => {
+    const cur = html.getAttribute('data-theme');
+    const next = cur === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+});
+
+// ── Mobile menu ──
+document.getElementById('mobileMenuToggle')?.addEventListener('click', () => {
+    document.getElementById('mobileNav')?.classList.toggle('active');
+});
+
+// ── Floating tiles ──
+const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const tilesContainer = document.getElementById('heroTiles');
+if (tilesContainer) {
+    for (let i = 0; i < 20; i++) {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        tile.textContent = LETTERS[Math.floor(Math.random() * 26)];
+        tile.style.left = (Math.random() * 100) + '%';
+        tile.style.animationDuration = (8 + Math.random() * 16) + 's';
+        tile.style.animationDelay = (Math.random() * -22) + 's';
+        tile.style.fontSize = (18 + Math.random() * 28) + 'px';
+        tilesContainer.appendChild(tile);
+    }
+}
+
+// ── Toast helper ──
+function showToast(msg) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMessage').textContent = msg;
+    toast.classList.add('active');
+    setTimeout(() => toast.classList.remove('active'), 2500);
+}
+
+// ── Direction label helper ──
+function dirLabel(dr, dc) {
+    if (dr === 0)  return dc > 0 ? 'H →' : 'H ←';
+    if (dc === 0)  return dr > 0 ? 'V ↓' : 'V ↑';
+    if (dr > 0)    return dc > 0 ? 'D ↘' : 'D ↙';
+    return dc > 0 ? 'D ↗' : 'D ↖';
+}
+
+function dirClass(dr, dc) {
+    if (dr === 0) return 'h';
+    if (dc === 0) return 'v';
+    return 'd';
+}
+
+// ── Word Search Solver ──
+document.getElementById('solveBtn')?.addEventListener('click', solve);
+
+function solve() {
+    const gridRaw = document.getElementById('gridInput').value.trim();
+    const wordsRaw = document.getElementById('wordsInput').value.trim();
+
+    if (!gridRaw || !wordsRaw) {
+        showToast('Please enter both a grid and words to find.');
+        return;
+    }
+
+    // Show loading
+    document.getElementById('loading').classList.add('visible');
+    document.getElementById('emptyState').classList.add('hidden');
+    document.getElementById('resultsContainer').style.display = 'none';
+    document.getElementById('noResults').classList.remove('visible');
+
+    setTimeout(() => {
+        const grid = gridRaw.split('\n').map(r => r.trim().toUpperCase().split(''));
+        const words = wordsRaw.split('\n').map(w => w.trim().toUpperCase()).filter(Boolean);
+
+        const rows = grid.length;
+        const cols = Math.max(...grid.map(r => r.length));
+        const directions = [
+            [0,1],[0,-1],[1,0],[-1,0],[1,1],[1,-1],[-1,1],[-1,-1]
+        ];
+
+        const results = words.map(word => {
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < (grid[r]?.length || 0); c++) {
+                    for (const [dr, dc] of directions) {
+                        let match = true;
+                        const cells = [];
+                        for (let i = 0; i < word.length; i++) {
+                            const nr = r + dr * i;
+                            const nc = c + dc * i;
+                            if (nr < 0 || nc < 0 || nr >= rows || nc >= (grid[nr]?.length || 0) || grid[nr][nc] !== word[i]) {
+                                match = false; break;
+                            }
+                            cells.push([nr, nc]);
+                        }
+                        if (match) {
+                            return {
+                                word,
+                                found: true,
+                                startRow: r + 1,
+                                startCol: c + 1,
+                                endRow: r + dr * (word.length - 1) + 1,
+                                endCol: c + dc * (word.length - 1) + 1,
+                                dr, dc
+                            };
+                        }
+                    }
+                }
+            }
+            return { word, found: false };
+        });
+
+        const found = results.filter(r => r.found).length;
+
+        // Update stats
+        document.getElementById('foundCount').textContent = found;
+        document.getElementById('totalCount').textContent = words.length;
+        document.getElementById('gridSize').textContent = rows + '×' + cols;
+
+        // Render results
+        const container = document.getElementById('resultsGrid');
+        container.innerHTML = '';
+        results.forEach(r => {
+            const row = document.createElement('div');
+            row.className = 'word-result-row ' + (r.found ? 'found' : 'not-found');
+
+            if (r.found) {
+                const label = dirLabel(r.dr, r.dc);
+                const cls = dirClass(r.dr, r.dc);
+                row.innerHTML = `
+                    <div class="word-result-name">${r.word}</div>
+                    <div class="word-result-meta">
+                        <span class="coord-text">Row ${r.startRow}, Col ${r.startCol} → Row ${r.endRow}, Col ${r.endCol}</span>
+                        <span class="dir-badge ${cls}">${label}</span>
+                        <span class="word-status-badge found">✓ Found</span>
+                    </div>`;
+            } else {
+                row.innerHTML = `
+                    <div class="word-result-name">${r.word}</div>
+                    <div class="word-result-meta">
+                        <span class="word-status-badge not-found">✗ Not Found</span>
+                    </div>`;
+            }
+            container.appendChild(row);
+        });
+
+        document.getElementById('loading').classList.remove('visible');
+        document.getElementById('resultsContainer').style.display = 'block';
+
+        if (results.length === 0) {
+            document.getElementById('noResults').classList.add('visible');
+        }
+    }, 200);
+}
+</script>
+
+<script src="word-search-solver.js"></script>
 </body>
 </html>
