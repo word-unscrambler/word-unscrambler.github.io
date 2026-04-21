@@ -17,17 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     </button>
                     <div class="nav-dropdown-content">
                         <a href="/">Word Unscrambler</a>
-                        <a href="/crossword-solver.html">Crossword Solver</a>
-                        <a href="/jumble-solver.html">Jumble Solver</a>
-                        <a href="/rhyming-dictionary.html">Rhyming Dictionary</a>
-                        <a href="/thesaurus.html">Thesaurus</a>
-                        <a href="/word-search-solver.html">Word Search Solver</a>
-                        <a href="/hangman.html">Hangman Game</a>
-                        <a href="/anagram-solver.html">Anagram Solver</a>
+                        <a href="/crossword-solver">Crossword Solver</a>
+                        <a href="/jumble-solver">Jumble Solver</a>
+                        <a href="/rhyming-dictionary">Rhyming Dictionary</a>
+                        <a href="/thesaurus">Thesaurus</a>
+                        <a href="/word-search-solver">Word Search Solver</a>
+                        <a href="/hangman">Hangman Game</a>
+                        <a href="/anagram-solver">Anagram Solver</a>
                     </div>
                 </div>                
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="blog" class="nav-link">Blog</a>
                 <a href="#about" class="nav-link">About</a>
             </nav>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -59,16 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
     <nav class="mobile-nav" id="mobileNav">
         <span class="mobile-nav-section">Tools</span>
         <a href="/" class="mobile-nav-link">Word Unscrambler</a>
-        <a href="/crossword-solver.html" class="mobile-nav-link">Crossword Solver</a>
-        <a href="/jumble-solver.html" class="mobile-nav-link">Jumble Solver</a>
-        <a href="/rhyming-dictionary.html" class="mobile-nav-link">Rhyming Dictionary</a>
-        <a href="/thesaurus.html" class="mobile-nav-link">Thesaurus</a>
-        <a href="/word-search-solver.html" class="mobile-nav-link">Word Search Solver</a>
-        <a href="/hangman.html" class="mobile-nav-link">Hangman Game</a>
-        <a href="/anagram-solver.html" class="mobile-nav-link">Anagram Solver</a>
+        <a href="/crossword-solver" class="mobile-nav-link">Crossword Solver</a>
+        <a href="/jumble-solver" class="mobile-nav-link">Jumble Solver</a>
+        <a href="/rhyming-dictionary" class="mobile-nav-link">Rhyming Dictionary</a>
+        <a href="/thesaurus" class="mobile-nav-link">Thesaurus</a>
+        <a href="/word-search-solver" class="mobile-nav-link">Word Search Solver</a>
+        <a href="/hangman." class="mobile-nav-link">Hangman Game</a>
+        <a href="/anagram-solver" class="mobile-nav-link">Anagram Solver</a>
         <span class="mobile-nav-section">Navigation</span>
         <a href="#features" class="mobile-nav-link">Features</a>
         <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="blog" class="mobile-nav-link">Blog</a>
         <a href="#about" class="mobile-nav-link">About</a>
     </nav>
     `;
